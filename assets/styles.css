@@ -78,6 +78,47 @@ p {
   border-bottom: 1px solid rgba(24, 32, 38, 0.06);
 }
 
+.contact-strip {
+  background: rgba(24, 32, 38, 0.92);
+  color: #fff;
+}
+
+.contact-strip-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 48px;
+  font-size: 0.95rem;
+}
+
+.contact-strip-wrap span,
+.contact-strip-wrap span a {
+  color: #fff;
+}
+
+.contact-strip-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.contact-strip-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-weight: 700;
+}
+
+.contact-strip-actions a:last-child {
+  background: #1f9d59;
+}
+
 .nav-wrap {
   display: flex;
   align-items: center;
@@ -449,6 +490,42 @@ p {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.gallery-shell {
+  padding: 1.4rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(248, 242, 233, 0.74));
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  margin: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 12px 26px rgba(18, 28, 35, 0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.05);
+}
+
 .service-card {
   min-height: 190px;
 }
@@ -471,6 +548,20 @@ p {
   font-weight: 800;
 }
 
+.team-photo {
+  margin-bottom: 1rem;
+  border-radius: 22px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(181, 91, 47, 0.14), rgba(34, 50, 64, 0.1));
+  aspect-ratio: 4 / 4.5;
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .role {
   font-weight: 700;
   color: var(--primary);
@@ -484,6 +575,13 @@ p {
 .contact-form {
   display: grid;
   gap: 1rem;
+}
+
+.contact-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
 }
 
 .contact-form label {
@@ -512,6 +610,34 @@ p {
 
 .site-footer {
   padding: 2rem 0 3rem;
+}
+
+.floating-contact {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 25;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.floating-contact a {
+  min-width: 118px;
+  min-height: 46px;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
+  box-shadow: 0 16px 30px rgba(18, 28, 35, 0.18);
+}
+
+.floating-contact-call {
+  background: linear-gradient(135deg, var(--surface-dark), var(--surface-dark-alt));
+}
+
+.floating-contact-whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
 }
 
 .footer-wrap {
@@ -555,12 +681,17 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .service-grid {
     grid-template-columns: 1fr;
   }
 
   .cta-banner,
-  .footer-wrap {
+  .footer-wrap,
+  .contact-strip-wrap {
     flex-direction: column;
     align-items: start;
   }
@@ -603,6 +734,18 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-shell {
+    padding: 1rem;
+  }
+
+  .gallery-item img {
+    height: 240px;
+  }
+
   .brand span {
     display: none;
   }
@@ -610,6 +753,22 @@ p {
   .button,
   .site-nav a {
     width: 100%;
+  }
+
+  .contact-strip-actions,
+  .contact-quick-actions,
+  .floating-contact {
+    width: 100%;
+  }
+
+  .floating-contact {
+    right: 0.8rem;
+    left: 0.8rem;
+    bottom: 0.8rem;
+  }
+
+  .floating-contact a {
+    min-width: 0;
   }
 
   .hero-actions {

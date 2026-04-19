@@ -8,7 +8,7 @@ if (navToggle && siteNav) {
   });
 }
 
-const revealItems = document.querySelectorAll(".feature-card, .service-card, .team-card, .info-panel, .cta-banner, .hero-card, .hero-stat");
+const revealItems = document.querySelectorAll(".feature-card, .service-card, .team-card, .info-panel, .cta-banner, .hero-card, .hero-stat, .gallery-item, .gallery-shell");
 
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
